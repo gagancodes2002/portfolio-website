@@ -1,6 +1,7 @@
 export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
+  { name: "Experience", link: "#experience" },
   { name: "Testimonials", link: "#testimonials" },
   { name: "Contact", link: "#contact" },
 ];
@@ -75,68 +76,55 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "3D Solar System Planets to Explore",
-    des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
+    title: "Insta Insight",
+    des: "Insta-Insight is your backstage pass to Instagram Reels data. Whether you’re a content creator, influencer, or social media manager, this powerful browser extension empowers you to make informed decisions and supercharge your Reels strategy.",
     img: "/p1.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "/ui.earth.com",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/chrome.svg"],
+    link: "https://chromewebstore.google.com/detail/insta-insight/pknilpgbmejebohnilnmdmhjkmjddajf",
   },
   {
     id: 2,
-    title: "Yoom - Video Conferencing App",
-    des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
+    title: "Tokaudit",
+    des: "5K+ users, Sort videos of TikTok users, Analyze, Download & Audit any TikTok profile in seconds. #1 TikTok Extension TikTok Creators & Brands.",
     img: "/p2.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "/ui.yoom.com",
+    iconLists: ["/re.svg", "/sass.svg", "/ts.svg", "/chrome.svg"],
+    link: "https://www.tokaudit.io/",
   },
-  {
-    id: 3,
-    title: "AI Image SaaS - Canva Application",
-    des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
-    img: "/p3.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "/ui.aiimg.com",
-  },
-  {
-    id: 4,
-    title: "Animated Apple Iphone 3D Website",
-    des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-    img: "/p4.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "/ui.apple.com",
-  },
+  // {
+  //   id: 3,
+  //   title: "AI Image SaaS - Canva Application",
+  //   des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
+  //   img: "/p3.svg",
+  //   iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
+  //   link: "/ui.aiimg.com",
+  // },
+  // {
+  //   id: 4,
+  //   title: "Animated Apple Iphone 3D Website",
+  //   des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
+  //   img: "/p4.svg",
+  //   iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+  //   link: "/ui.apple.com",
+  // },
 ];
 
 export const testimonials = [
   {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+    quote: `I work with a lot of Upworkers and this guy ... this guy right here has hands down been the best experience
+I've ever had. Extreme attention to detail, was able to execute every single thing I wanted AND he knew
+how to project manage himself and anticipate what I would want and need before I even thought of it. This
+has been the best experience and I will Absolutley be working with him several times in the near future.
+Thank you again!`,
+    name: "Michael Hernsin",
+    title: "Upwork Client, California",
+    profile: "/profile.svg",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "Gagan bindoria is very talented and hard working guy absoluetly recommended..",
+    name: "Sadab Ahmad",
+    title: "Upwork Client, Lucknow",
+    profile: "/person.svg",
   },
 ];
 
@@ -176,32 +164,48 @@ export const companies = [
 export const workExperience = [
   {
     id: 1,
-    title: "Frontend Engineer Intern",
-    desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
+    title: "Orgzit ",
+    start: "2022 Feb",
+    end: "2023 May",
+    position: "Frontend Developer",
+    desc: "Played a key role in frontend development at Orgzit CRM, a small-scale enterprise.",
     className: "md:col-span-2",
+    skills: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
     thumbnail: "/exp1.svg",
+    points: [
+      `Stepped into a pivotal role in frontend development at Orgzit CRM, a small-scale enterprise.`,
+      `Took on additional responsibilities such as working with React Native for the Android and iOS app.`,
+      `Utilized Sentry for monitoring bugs in the CRM and effectively debugging them.`,
+      `Ensured the web app was mobile-friendly by building responsive designs.`,
+      `Crafted impactful features using technologies like Backbone.js, jQuery, SCSS.`,
+    ],
   },
   {
     id: 2,
-    title: "Mobile App Dev - JSM Tech",
+    title: "Cognavi Pvt Ltd.",
+    start: "2022 Feb",
+    end: "2023 May",
+    position: "Frontend Enginner",
     desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
     className: "md:col-span-2", // change to md:col-span-2
+    skills: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
     thumbnail: "/exp2.svg",
+    points: [
+      `Stepped into a pivotal role in frontend development at Orgzit CRM, a small-scale enterprise.`,
+      `Took on additional responsibilities such as working with React Native for the Android and iOS app.`,
+      `Utilized Sentry for monitoring bugs in the CRM and effectively debugging them.`,
+      `Ensured the web app was mobile-friendly by building responsive designs.`,
+      `Crafted impactful features using technologies like Backbone.js, jQuery, SCSS.`,
+    ],
   },
-  {
-    id: 3,
-    title: "Freelance App Dev Project",
-    desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
-    className: "md:col-span-2", // change to md:col-span-2
-    thumbnail: "/exp3.svg",
-  },
-  {
-    id: 4,
-    title: "Lead Frontend Developer",
-    desc: "Developed and maintained user-facing features using modern frontend technologies.",
-    className: "md:col-span-2",
-    thumbnail: "/exp4.svg",
-  },
+  // {
+  //   id: 3,
+  //   title: "Freelance App Dev Project",
+  //   desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
+  //   className: "md:col-span-2", // change to md:col-span-2
+  //   skills: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
+  //   thumbnail: "/exp3.svg",
+  // },
 ];
 
 export const socialMedia = [
