@@ -15,7 +15,7 @@ const Footer = () => {
         />
       </div>
 
-      <div className="flex flex-col items-center">
+      {/* <div className="flex flex-col items-center">
         <h1 className="heading lg:max-w-[45vw]">
           Ready to take <span className="text-purple">your</span> digital
           presence to the next level?
@@ -31,9 +31,9 @@ const Footer = () => {
             position="right"
           />
         </a>
-      </div>
-      <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
-        <div className="flex items-center md:gap-3 gap-6">
+      </div> */}
+      <div className="flex mt-16 md:flex-row flex-col justify-center items-center">
+        <div className="flex items-center justify-center md:gap-3 gap-6">
           {socialMedia.map((info) => (
             <div
               key={info.id}

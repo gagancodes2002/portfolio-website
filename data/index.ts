@@ -164,32 +164,75 @@ export const companies = [
 export const workExperience = [
   {
     id: 1,
+    title: "Cognavi Pvt Ltd.",
+    start: "2023 June",
+    end: "Present 👨‍💻",
+    position: "Frontend Enginner",
+    desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
+    className: "md:col-span-2", // change to md:col-span-2
+    skills: [
+      {
+        name: "Next.js",
+        img: "/next-js.svg",
+      },
+      {
+        name: "React",
+        img: "/react.svg",
+      },
+      {
+        name: "Tailwind",
+        img: "/tail.svg",
+      },
+      {
+        name: "Redux",
+        img: "/redux.svg",
+      },
+      {
+        name: "TypeScript",
+        img: "/ts.svg",
+      },
+      {
+        name: "Framer Motion",
+        img: "/framer.svg",
+      },
+      {
+        name: "GSAP",
+        img: "/gsap.svg",
+      },
+    ],
+    thumbnail: "/exp2.svg",
+    points: [
+      `Spearheaded development of an AI facilitated recruitment booster interface at Cognavi India Pvt.
+Ltd.`,
+      `Leveraged Next.js, React Query / Redux, Tailwind and TypeScript to create a dynamic and
+efficient platform.`,
+      `Translated complex requirements into user-friendly features.`,
+      ` Demonstrated innovation and problem-solving skills effectively `,
+    ],
+  },
+  {
+    id: 2,
     title: "Orgzit ",
     start: "2022 Feb",
     end: "2023 May",
     position: "Frontend Developer",
     desc: "Played a key role in frontend development at Orgzit CRM, a small-scale enterprise.",
     className: "md:col-span-2",
-    skills: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    thumbnail: "/exp1.svg",
-    points: [
-      `Stepped into a pivotal role in frontend development at Orgzit CRM, a small-scale enterprise.`,
-      `Took on additional responsibilities such as working with React Native for the Android and iOS app.`,
-      `Utilized Sentry for monitoring bugs in the CRM and effectively debugging them.`,
-      `Ensured the web app was mobile-friendly by building responsive designs.`,
-      `Crafted impactful features using technologies like Backbone.js, jQuery, SCSS.`,
+    skills: [
+      {
+        name: "Backbone.js",
+        img: "/backbone.svg",
+      },
+      {
+        name: "jQuery",
+        img: "/jquery.svg",
+      },
+      {
+        name: "Sass",
+        img: "/sass.svg",
+      },
     ],
-  },
-  {
-    id: 2,
-    title: "Cognavi Pvt Ltd.",
-    start: "2022 Feb",
-    end: "2023 May",
-    position: "Frontend Enginner",
-    desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
-    className: "md:col-span-2", // change to md:col-span-2
-    skills: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    thumbnail: "/exp2.svg",
+    thumbnail: "/exp1.svg",
     points: [
       `Stepped into a pivotal role in frontend development at Orgzit CRM, a small-scale enterprise.`,
       `Took on additional responsibilities such as working with React Native for the Android and iOS app.`,
