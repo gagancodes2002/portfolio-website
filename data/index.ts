@@ -255,13 +255,21 @@ export const socialMedia = [
   {
     id: 1,
     img: "/git.svg",
+    link: "https://github.com/gagancodes2002",
   },
   {
     id: 2,
     img: "/twit.svg",
+    link: "https://twitter.com/gagancodes2002",
   },
   {
     id: 3,
     img: "/link.svg",
+    link: "https://www.linkedin.com/in/gaganbindoria-v8/",
+  },
+  {
+    id: 4,
+    img: "/leetcode.svg",
+    link: "https://leetcode.com/u/gaganbindoria/",
   },
 ];

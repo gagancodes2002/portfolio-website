@@ -6,7 +6,7 @@ import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
 const Hero = () => {
   return (
-    <div className="pb-20 pt-36">
+    <section id="about" className="pb-20 pt-36">
       {/**
        *  UI: Spotlights
        *  Link: https://ui.aceternity.com/components/spotlight
@@ -56,7 +56,7 @@ const Hero = () => {
             Hi! I&apos;m Gagan Bindoria, a Frontend Developer based in India.
           </p>
 
-          <a href="#about">
+          <a href="#experience">
             <MagicButton
               title="Show my work"
               icon={<FaLocationArrow />}
@@ -65,7 +65,7 @@ const Hero = () => {
           </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
