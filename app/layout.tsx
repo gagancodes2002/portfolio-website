@@ -21,7 +21,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/gb-avatar.png" sizes="any" />
       </head>
-      <body className={`${inter.className} `}>
+      <body className={`${inter.className} scroll-container `}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
