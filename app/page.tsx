@@ -270,7 +270,7 @@ const WorkExperienceTile = ({ card }: { card: any }) => {
 
 const Home = () => {
   useLayoutEffect(() => {
-    // gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+    gsap.registerPlugin(ScrollTrigger);
     // const ctx = gsap.context(() => {
     //   const races = document.querySelector(".races");
     //   function getScrollAmount() {
@@ -294,6 +294,32 @@ const Home = () => {
     //   });
     // });
     // return () => ctx.revert();
+    gsap.to(".gsap-img-anim", {
+      scrollTrigger: {
+        trigger: "#about",
+        scroller: ".scroll-container",
+        start: "top top",
+        scrub: 1,
+        // give a zoom effect
+        toggleActions: "play none none reverse",
+      },
+      scale: 1.4,
+    });
+
+    const textOne = document.querySelector(".skill-scroll");
+
+    gsap.to(textOne, {
+      // y: 400 - textOne.clientHeight - 32,
+      scrollTrigger: {
+        trigger: ".skill-scroll",
+        scroller: ".scroll-container",
+        start: "-500vh 0px",
+        markers: true,
+        scrub: 1,
+        toggleActions: "play reverse play reverse",
+      },
+      y: "-155%",
+    });
   }, []);
 
   return (

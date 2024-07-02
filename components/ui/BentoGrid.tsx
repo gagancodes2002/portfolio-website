@@ -168,14 +168,6 @@ const food = [
     name: "Jira",
     img: "https://cdn.worldvectorlogo.com/logos/jira-1.svg",
   },
-  {
-    name: "Sentry",
-    img: "https://cdn.worldvectorlogo.com/logos/sentry-1.svg",
-  },
-  {
-    name: "Figma",
-    img: "https://cdn.worldvectorlogo.com/logos/figma-1.svg",
-  },
 ];
 
 export const BentoGridItem = ({
@@ -237,24 +229,6 @@ export const BentoGridItem = ({
     setCopied(true);
   };
 
-  useEffect(() => {
-    gsap.to(".gsap-img-anim", {
-      scrollTrigger: {
-        trigger: "#about",
-        scroller: ".scroll-container",
-        start: "top top",
-        scrub: 1,
-        // give a zoom effect
-        toggleActions: "play none none reverse",
-      },
-      scale: 1.2,
-    });
-
-    // scroll the left-list infinitely, from bottom to top, seamlessly and smoothly with GSAP
-
-    // split the list into multiple parts and animate them one by one
-  }, []);
-
   return (
     <div
       className={cn(
@@ -312,7 +286,11 @@ export const BentoGridItem = ({
           )}
         >
           {/* change the order of the title and des, font-extralight, remove text-xs text-neutral-600 dark:text-neutral-300 , change the text-color */}
-          <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10">
+          <div
+            className={cn(
+              "font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10"
+            )}
+          >
             {description}
           </div>
           {/* add text-3xl max-w-96 , remove text-neutral-600 dark:text-neutral-300*/}
@@ -329,7 +307,7 @@ export const BentoGridItem = ({
           {/* Tech stack list div */}
           {id === 1 && (
             <div className=" absolute right-0 top-0 ">
-              <div className="flex space-y-4 pb-6  flex-col max-h-[60rem] w-fit overflow-y-scroll sleek-scroll pr-2">
+              <div className="flex space-y-4  flex-col max-h-[100%] w-fit skill-scroll overflow-y-scroll sleek-scroll mr-2 py-12">
                 {food.map(({ name, img }) => (
                   <Card key={name} image={img} name={name} />
                 ))}
