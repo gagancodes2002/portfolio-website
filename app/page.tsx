@@ -314,7 +314,6 @@ const Home = () => {
         trigger: ".skill-scroll",
         scroller: ".scroll-container",
         start: "-500vh 0px",
-        markers: true,
         scrub: 1,
         toggleActions: "play reverse play reverse",
       },
