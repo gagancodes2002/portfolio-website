@@ -6,7 +6,7 @@ import { LampContainer } from "./ui/LampContainer";
 
 const Footer = () => {
   return (
-    <section className="w-full pb-10" id="contact">
+    <section className="w-full " id="contact">
       {/* background grid */}
       <div className="w-full absolute left-0 -bottom-72 h-fit">
         <img
@@ -34,8 +34,8 @@ const Footer = () => {
         </a>
       </div> */}
       <LampContainer>
-        <div className="flex md:flex-row flex-col justify-center items-center">
-          <div className="flex items-center justify-center md:gap-3 gap-6">
+        <div className=" flex md:flex-row flex-col justify-center items-center">
+          <div className=" flex items-center justify-center md:gap-3 gap-6">
             {socialMedia.map((info) => (
               <div
                 key={info.id}
