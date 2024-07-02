@@ -260,7 +260,7 @@ export const socialMedia = [
   {
     id: 2,
     img: "/twit.svg",
-    link: "https://twitter.com/gagancodes2002",
+    link: "https://twitter.com/GBindoria400",
   },
   {
     id: 3,

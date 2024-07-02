@@ -36,7 +36,7 @@ const Poster = () => {
   const stageRef = useRef(null);
 
   useEffect(() => {
-    const stage = stageRef.current;
+    const stage = stageRef.current! as HTMLElement;
     new SplitText(".name", {
       type: "chars",
       charsClass: "bandChar",
@@ -275,15 +275,7 @@ function Card({ name, image }: Props) {
   );
 }
 
-const food: [
-  {
-    name: string;
-    img: string;
-  }
-][{
-  name: string;
-  img: string;
-}] = [
+const food = [
   {
     name: "NextJS",
     img: "next-js.svg",

@@ -11,7 +11,18 @@ import Approach from "@/components/Approach";
 // import Experience from "@/components/Experience";
 import RecentProjects from "@/components/RecentProjects";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import {
+  AwaitedReactNode,
+  JSXElementConstructor,
+  Key,
+  ReactElement,
+  ReactNode,
+  ReactPortal,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
@@ -20,7 +31,7 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 
 const Experience = () => {
-  const roboCursorFollowRef = useRef(null);
+  const roboCursorFollowRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <section id="experience" className="py-20 w-full">
@@ -61,7 +72,8 @@ const Experience = () => {
                 bubbles: true,
                 cancelable: true,
               });
-              roboCursorFollowRef.current.dispatchEvent(customEvent);
+              roboCursorFollowRef.current &&
+                roboCursorFollowRef.current.dispatchEvent(customEvent);
             }}
           >
             <div className="rb-container">
@@ -144,18 +156,23 @@ const WorkExperienceTile = ({ card }: { card: any }) => {
         {card.position}
       </div>
       <div className="flex items-center">
-        {card.skills.map((skill, index) => (
-          <div
-            title={skill.name}
-            key={index}
-            className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
-            style={{
-              transform: `translateX(-${5 * index + 2}px)`,
-            }}
-          >
-            <img src={skill.img} alt="icon5" className="p-2" />
-          </div>
-        ))}
+        {card.skills.map(
+          (
+            skill: { name: string | undefined; img: string | undefined },
+            index: Key | null | undefined
+          ) => (
+            <div
+              title={skill.name}
+              key={index}
+              className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+              style={{
+                transform: `translateX(-${5 * Number(index) + 2}px)`,
+              }}
+            >
+              <img src={skill.img} alt="icon5" className="p-2" />
+            </div>
+          )
+        )}
       </div>
       {isActive && (
         <AnimatePresence>
@@ -168,13 +185,29 @@ const WorkExperienceTile = ({ card }: { card: any }) => {
             animate={{ opacity: 1, transition: { duration: 0.5 } }}
             exit={{ opacity: 0 }}
           >
-            {card.points.map((res) => (
-              <li className="points">
-                {" "}
-                <circle className="text-white-100 mr-2">•</circle>
-                <span className="text-white-100 md:text-sm text-xs">{res}</span>
-              </li>
-            ))}
+            {card.points.map(
+              (
+                res:
+                  | string
+                  | number
+                  | bigint
+                  | boolean
+                  | ReactElement<any, string | JSXElementConstructor<any>>
+                  | Iterable<ReactNode>
+                  | ReactPortal
+                  | Promise<AwaitedReactNode>
+                  | null
+                  | undefined
+              ) => (
+                <li className="points">
+                  {" "}
+                  <circle className="text-white-100 mr-2">•</circle>
+                  <span className="text-white-100 md:text-sm text-xs">
+                    {res}
+                  </span>
+                </li>
+              )
+            )}
           </motion.ul>
         </AnimatePresence>
       )}
