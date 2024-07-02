@@ -140,6 +140,10 @@
 }
 
 .rb-container ul.rb li.rb-item:last-child {
+  padding-bottom: 0;
+}
+
+.rb-container ul.rb li.rb-item:last-child {
   border-left: 0;
 }
 

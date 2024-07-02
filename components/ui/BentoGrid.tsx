@@ -232,7 +232,7 @@ export const BentoGridItem = ({
   };
 
   const handleCopy = () => {
-    const text = "hsu@jsmastery.pro";
+    const text = "gaganbindoria2002@gmail.com";
     navigator.clipboard.writeText(text);
     setCopied(true);
   };
@@ -329,7 +329,7 @@ export const BentoGridItem = ({
           {/* Tech stack list div */}
           {id === 1 && (
             <div className=" absolute right-0 top-0 ">
-              <div className="flex space-y-4 pb-6  flex-col max-h-[60rem] w-fit overflow-y-scroll">
+              <div className="flex space-y-4 pb-6  flex-col max-h-[60rem] w-fit overflow-y-scroll sleek-scroll pr-2">
                 {food.map(({ name, img }) => (
                   <Card key={name} image={img} name={name} />
                 ))}
