@@ -13,11 +13,9 @@ import MagicButton from "../MagicButton";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import React, { useRef } from "react";
-import { SplitText } from "gsap-trial/SplitText";
 import { Variants, motion } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(SplitText);
 
 const skills = [
   "ReactJS",
@@ -31,172 +29,6 @@ const skills = [
   "GSAP",
   "Framer Motion",
 ];
-
-const Poster = () => {
-  const stageRef = useRef(null);
-
-  useEffect(() => {
-    const stage = stageRef.current! as HTMLElement;
-    new SplitText(".name", {
-      type: "chars",
-      charsClass: "bandChar",
-      position: "absolute",
-    });
-
-    const intro = () => {
-      let tl = gsap.timeline({
-        delay: 1,
-        defaults: {
-          duration: 2,
-          ease: "power4",
-        },
-      });
-      tl.from(".names", {
-        x: function (i) {
-          return i % 2 === 0 ? 1000 : -1000;
-        },
-        stagger: 0.15,
-      }).from(
-        "p span",
-        {
-          y: 70,
-          stagger: 0.1,
-        },
-        2
-      );
-      return tl;
-    };
-
-    const loopAnim = () => {
-      let tl = gsap.timeline({
-        repeat: -1,
-      });
-
-      tl.to(".names", {
-        y: -102,
-        duration: 5,
-        ease: "none",
-      })
-        .from(
-          ".name__end--red .bandChar",
-          {
-            y: 120,
-            duration: 3,
-            ease: "power4",
-            stagger: 0.05,
-          },
-          1
-        )
-        .from(
-          ".name__end--blue .bandChar",
-          {
-            y: 120,
-            duration: 3,
-            ease: "power4",
-            stagger: 0.05,
-          },
-          1.3
-        )
-        .from(
-          ".band:nth-of-type(5) .name--blue .bandChar",
-          {
-            y: -120,
-            duration: 2,
-            ease: "power4.inOut",
-            stagger: -0.05,
-          },
-          0
-        )
-        .to(
-          ".band:nth-of-type(6) .name--blue .bandChar",
-          {
-            y: 120,
-            duration: 2,
-            ease: "power4.inOut",
-            stagger: -0.05,
-          },
-          0
-        );
-
-      return tl;
-    };
-
-    const init = () => {
-      gsap.set(stage, { autoAlpha: 1 });
-      gsap.set(".content", { rotate: -25 });
-      stage.onclick = () => {
-        gltl.restart();
-      };
-
-      const gltl = gsap.timeline({ delay: 1 });
-      gltl.add(intro());
-      gltl.add(loopAnim(), 0);
-    };
-
-    const resize = () => {
-      let vh = window.innerHeight;
-      let sh = stage.offsetHeight;
-      let scaleFactor = vh / sh;
-      gsap.set(stage, { scale: scaleFactor < 1 ? scaleFactor : 1 });
-    };
-
-    // window.addEventListener("resize", resize);
-
-    init();
-    resize();
-
-    return () => {
-      window.removeEventListener("resize", resize);
-    };
-  }, []);
-
-  return (
-    <div
-      className="stage ring-2 ring-slate-700 right-0 min-w-[100%] w-[100%] h-[100%]  cursor-pointer overflow-hidden invisible"
-      ref={stageRef}
-    >
-      <div className="content absolute bottom-[0px] ring-1 ring-slate-600 right-[0px] w-[100%] h-[100%]">
-        {skills.map((skill, index) => (
-          <h1
-            className="band relative m-0 h-[52px] font-semibold text-[35px] text-[#d71111] leading-[0.8]"
-            key={index}
-          >
-            <span className="names block relative w-[150%] h-[120px] overflow-hidden">
-              <span className="name block absolute top-0 left-0 mix-blend-multiply text-[#d71111]">
-                {skill}
-              </span>
-              <span className="name name--blue block absolute top-[8px] left-0 mix-blend-multiply text-[#019ac5]">
-                {skill}
-              </span>
-            </span>
-          </h1>
-        ))}
-        <h1 className="band relative m-0 h-[102px] font-semibold text-[135px] text-[#d71111] leading-[0.8]">
-          <span className="names block relative w-[150%] h-[120px] overflow-hidden">
-            <span className="name name--red name__end name__end--red block absolute top-0 left-0 mix-blend-multiply text-[#d71111]">
-              {skills[skills.length - 1]}
-            </span>
-            <span className="name name--blue name__end name__end--blue block absolute top-[8px] left-0 mix-blend-multiply text-[#019ac5]">
-              {skills[skills.length - 1]}
-            </span>
-          </span>
-        </h1>
-      </div>
-      <p className="date absolute bottom-[24px] left-[25px] m-0 text-[#d71111] text-[17px] leading-[1.3] text-left">
-        <span className="block">tuesday</span>
-        <span className="block">december 9 1980</span>
-      </p>
-      <p className="location absolute bottom-[24px] left-[332px] m-0 text-[#d71111] text-[17px] leading-[1.3]">
-        <span className="block">at the starwood</span>
-        <span className="block">west hollywood, california</span>
-      </p>
-      <p className="guests absolute bottom-[24px] left-[566px] m-0 text-[#d71111] text-[17px] leading-[1.3]">
-        <span className="block">with fear</span>
-        <span className="block">and circle jerks</span>
-      </p>
-    </div>
-  );
-};
 
 export const BentoGrid = ({
   className,
@@ -496,9 +328,6 @@ export const BentoGridItem = ({
 
           {/* Tech stack list div */}
           {id === 1 && (
-            // <div className="w-full h-full absolute !m-0 border-2 border-slate-600 top-0 left-0">
-            //   <Poster />
-            // </div>
             <div className=" absolute right-0 top-0 ">
               <div className="flex space-y-4 pb-6  flex-col max-h-[60rem] w-fit overflow-y-scroll">
                 {food.map(({ name, img }) => (
