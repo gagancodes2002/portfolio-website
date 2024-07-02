@@ -52,9 +52,9 @@ const Experience = () => {
           <div
             ref={roboCursorFollowRef}
             className="absolute top-0 bottom-0 left-0 w-full h-full !z-[1] "
-            style={{
-              mixBlendMode: "difference",
-            }}
+            // style={{
+            //   mixBlendMode: "difference",
+            // }}
           >
             <Spline
               className="!bg-black "
