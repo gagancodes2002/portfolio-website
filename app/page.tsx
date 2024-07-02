@@ -185,29 +185,13 @@ const WorkExperienceTile = ({ card }: { card: any }) => {
             animate={{ opacity: 1, transition: { duration: 0.5 } }}
             exit={{ opacity: 0 }}
           >
-            {card.points.map(
-              (
-                res:
-                  | string
-                  | number
-                  | bigint
-                  | boolean
-                  | ReactElement<any, string | JSXElementConstructor<any>>
-                  | Iterable<ReactNode>
-                  | ReactPortal
-                  | Promise<AwaitedReactNode>
-                  | null
-                  | undefined
-              ) => (
-                <li className="points">
-                  {" "}
-                  <circle className="text-white-100 mr-2">•</circle>
-                  <span className="text-white-100 md:text-sm text-xs">
-                    {res}
-                  </span>
-                </li>
-              )
-            )}
+            {card.points.map((res: any) => (
+              <li key={res} className="points">
+                {" "}
+                <circle className="text-white-100 mr-2">•</circle>
+                <span className="text-white-100 md:text-sm text-xs">{res}</span>
+              </li>
+            ))}
           </motion.ul>
         </AnimatePresence>
       )}
