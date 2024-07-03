@@ -35,8 +35,9 @@ const Experience = () => {
 
   return (
     <section id="experience" className="py-20 w-full">
-      <h1 className="heading">
-        My <span className="text-purple">work experience</span>
+      <h1 className="heading px-4 md:px-0">
+        <span className="text-white-100">Work</span>{" "}
+        <span className="text-purple"> experience</span>
       </h1>
       <div
         className="max-lg:mt-10 gap-16 mt-10 overflow-hidden rounded-3xl border fbg-black-100 border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none    

@@ -6,7 +6,7 @@ import { LampContainer } from "./ui/LampContainer";
 
 const Footer = () => {
   return (
-    <section className="w-full " id="contact">
+    <section className="w-full" id="contact">
       {/* background grid */}
       <div className="top-0 left-0 absolute w-full h-full">
         <img
