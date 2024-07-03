@@ -53,16 +53,23 @@ const Hero = () => {
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi! I&apos;m Gagan Bindoria, a Frontend Developer based in India.
+            Hi! I&apos;m Gagan Bindoria, a Frontend Developer with over 3 years
+            of experience, based in <br /> New Delhi, India.
           </p>
 
-          <a href="#experience">
+          <div
+            onClick={() => {
+              document.querySelector("#experience")?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+          >
             <MagicButton
               title="Show my work"
               icon={<FaLocationArrow />}
               position="right"
             />
-          </a>
+          </div>
         </div>
       </div>
     </section>

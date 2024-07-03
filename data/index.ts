@@ -31,7 +31,7 @@ export const gridItems = [
   {
     id: 3,
     //write something about international clients
-    title: "I have worked with international clients",
+    title: "Have worked with International clients",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
@@ -42,7 +42,7 @@ export const gridItems = [
 
   {
     id: 4,
-    title: "I am a tech enthusiast and love developing Chrome extensions",
+    title: "A tech enthusiast with a knack of developing Chrome extensions ",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",

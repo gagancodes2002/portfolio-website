@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <section className="w-full " id="contact">
       {/* background grid */}
-      <div className="w-full absolute left-0 -bottom-72 h-fit">
+      <div className="top-0 left-0 absolute w-full h-full">
         <img
           src="/footer-grid.svg"
           alt="grid"
