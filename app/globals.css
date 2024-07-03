@@ -221,7 +221,8 @@ input::placeholder {
 }
 
 .sleek-scroll::-webkit-scrollbar {
-  width: 8px;
+  width: 4px;
+  height: 4px;
   /* glass effect */
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
 }

@@ -23,7 +23,7 @@ const Clients = () => {
             direction="right"
             speed="normal"
             pauseOnHover={true}
-            className="overflow-x-scroll scroll-smooth "
+            className="overflow-x-auto sleek-scroll scroll-smooth "
           />
         </div>
 

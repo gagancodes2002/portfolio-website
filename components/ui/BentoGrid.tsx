@@ -307,7 +307,7 @@ export const BentoGridItem = ({
           {/* Tech stack list div */}
           {id === 1 && (
             <div className=" absolute right-0 top-0 ">
-              <div className="flex space-y-4  flex-col max-h-[100%] w-fit skill-scroll overflow-y-scroll sleek-scroll mr-2 py-12">
+              <div className="flex space-y-4  flex-col max-h-[100%] w-fit skill-scroll overflow-y-scroll overflow-x-hidden sleek-scroll mr-2 py-12">
                 {food.map(({ name, img }) => (
                   <Card key={name} image={img} name={name} />
                 ))}
