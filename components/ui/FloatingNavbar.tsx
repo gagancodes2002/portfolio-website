@@ -30,7 +30,7 @@ export const FloatingNav = ({
     if (typeof current === "number") {
       let direction = current! - scrollYProgress.getPrevious()!;
 
-      if (scrollYProgress.get() < 0.02) {
+      if (scrollYProgress.get() < 0.01) {
         // also set true for the initial state
         setVisible(true);
       } else {
@@ -42,6 +42,10 @@ export const FloatingNav = ({
       }
     }
   });
+
+  const handleClick = (link: string) => {
+    document.querySelector(link)?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <AnimatePresence mode="wait">
@@ -72,18 +76,18 @@ export const FloatingNav = ({
         }}
       >
         {navItems.map((navItem: any, idx: number) => (
-          <Link
+          <div
             key={`link=${idx}`}
-            href={navItem.link}
             className={cn(
               "relative dark:text-neutral-50 items-center  flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
             )}
+            onClick={() => handleClick(navItem.link)}
           >
             <span className="block sm:hidden">{navItem.icon}</span>
             {/* add !cursor-pointer */}
             {/* remove hidden sm:block for the mobile responsive */}
             <span className=" text-sm !cursor-pointer">{navItem.name}</span>
-          </Link>
+          </div>
         ))}
         {/* remove this login btn */}
         {/* <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
