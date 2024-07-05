@@ -273,3 +273,66 @@ export const socialMedia = [
     link: "https://leetcode.com/u/gaganbindoria/",
   },
 ];
+
+export const food = [
+  {
+    name: "NextJS",
+    img: "next-js.svg",
+  },
+  {
+    name: "ReactJS",
+    img: "/react.svg",
+  },
+  {
+    name: "BackboneJS",
+    img: "backbone.svg",
+  },
+  {
+    name: "Sass",
+    img: "sass.svg",
+  },
+  {
+    name: "Redux",
+    img: "redux.svg",
+  },
+  {
+    name: "Tailwind",
+    img: "tailwind.svg",
+  },
+  {
+    name: "Bootstrap",
+    img: "bootstrap.svg",
+  },
+  {
+    name: "jQuery",
+    img: "jquery.svg",
+  },
+  {
+    name: "GSAP",
+    img: "gsap.svg",
+  },
+  {
+    name: "Framer Motion",
+    img: "framer.svg",
+  },
+  {
+    name: "NodeJS",
+    img: "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg",
+  },
+  {
+    name: "MongoDB",
+    img: "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg",
+  },
+  {
+    name: "ExpressJS",
+    img: "express.svg",
+  },
+  {
+    name: "Git",
+    img: "https://cdn.worldvectorlogo.com/logos/git-icon.svg",
+  },
+  {
+    name: "Jira",
+    img: "https://cdn.worldvectorlogo.com/logos/jira-1.svg",
+  },
+];

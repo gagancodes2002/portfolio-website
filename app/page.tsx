@@ -7,28 +7,20 @@ import Hero from "@/components/Hero";
 import Grid from "@/components/Grid";
 import Footer from "@/components/Footer";
 import Clients from "@/components/Clients";
-import Approach from "@/components/Approach";
 // import Experience from "@/components/Experience";
 import RecentProjects from "@/components/RecentProjects";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
-import {
-  AwaitedReactNode,
-  JSXElementConstructor,
-  Key,
-  ReactElement,
-  ReactNode,
-  ReactPortal,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react";
+import { Key, useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
-import { Button } from "@/components/ui/MovingBorders";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
+import {
+  AppDataContextProvider,
+  useAppDataContext,
+} from "@/components/context";
+import Popover from "@/components/ui/Popover";
+import { CardHoverEffect } from "@/components/ui/CardHoverEffect";
 
 const Experience = () => {
   const roboCursorFollowRef = useRef<HTMLDivElement | null>(null);
@@ -151,12 +143,12 @@ const WorkExperienceTile = ({ card }: { card: any }) => {
           {" "}
           {card.start + " - " + card.end}
         </span>{" "}
-        {card.title}
+        <span className="mt-2">{card.title}</span>
       </div>
-      <div className="item-title text-start text-md  text-white-100 mt-3 font-semibold">
+      <div className="item-title text-start text-md  text-white-100 mt-1 font-semibold">
         {card.position}
       </div>
-      <div className="flex items-center">
+      <div className="flex items-center mt-1">
         {card.skills.map(
           (
             skill: { name: string | undefined; img: string | undefined },
@@ -269,6 +261,28 @@ const WorkExperienceTile = ({ card }: { card: any }) => {
   );
 };
 
+const CardPopup = () => {
+  const { state, mutateState } = useAppDataContext();
+
+  useEffect(() => {
+    console.log("state.isModalOpen", state?.isModalOpen);
+
+    if (state?.isModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflowY = "auto";
+    }
+  }, [state.isModalOpen]);
+
+  return (
+    state?.isModalOpen && (
+      <Popover>
+        <CardHoverEffect />
+      </Popover>
+    )
+  );
+};
+
 const Home = () => {
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -323,19 +337,22 @@ const Home = () => {
   }, []);
 
   return (
-    <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
-      <div className="max-w-7xl section-container " role="main">
-        <FloatingNav navItems={navItems} />
-        <Hero />
-        <Grid />
-        <RecentProjects />
-        <Clients />
+    <AppDataContextProvider>
+      <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
+        <CardPopup />
+        <div className={cn("max-w-7xl section-container ")} role="main">
+          <FloatingNav navItems={navItems} />
+          <Hero />
+          <Grid />
+          <RecentProjects />
+          <Clients />
 
-        <Experience />
-        {/* <Approach /> */}
+          <Experience />
+          {/* <Approach /> */}
+        </div>
         <Footer />
-      </div>
-    </main>
+      </main>
+    </AppDataContextProvider>
   );
 };
 

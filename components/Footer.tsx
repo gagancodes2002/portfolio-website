@@ -6,9 +6,12 @@ import { LampContainer } from "./ui/LampContainer";
 
 const Footer = () => {
   return (
-    <section className="w-full" id="contact">
+    <section
+      className="w-[100vw] flex justify-center items-center "
+      id="contact"
+    >
       {/* background grid */}
-      <div className="top-0 left-0 absolute w-full h-full">
+      <div className="top-0 left-0 absolute w-full h-full z-[-100]">
         <img
           src="/footer-grid.svg"
           alt="grid"
@@ -33,21 +36,29 @@ const Footer = () => {
           />
         </a>
       </div> */}
-      <LampContainer>
+      <div className="bg-black flex flex-row items-center justify-center border-white/[0.1] border-[1px]  w-full h-[40vh] relative ">
+        {/* <LampContainer> */}
         <div className=" flex md:flex-row flex-col justify-center items-center">
           <div className=" flex items-center justify-center md:gap-3 gap-6">
             {socialMedia.map((info) => (
               <div
                 key={info.id}
-                className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
+                className="w-10 h-10 cursor-pointer group flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300 transition duration-300 hover:shadow-[5px_5px_0px_0px_rgba(109,40,217)]"
                 onClick={() => window.open(info.link, "_blank")}
               >
-                <img src={info.img} alt="icons" width={20} height={20} />
+                <img
+                  src={info.img}
+                  alt="icons"
+                  width={20}
+                  height={20}
+                  className="group-hover:scale-125 transition-transform duration-300"
+                />
               </div>
             ))}
           </div>
         </div>
-      </LampContainer>
+        {/* </LampContainer> */}
+      </div>
     </section>
   );
 };
